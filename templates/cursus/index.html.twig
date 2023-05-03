@@ -1,0 +1,67 @@
+{% extends 'user/bars.html.twig' %}
+
+
+    
+{% block contenpage %}
+
+<div class="page-title">
+    <div class="title_left">
+        <h5 style="font-weight: 600;">Ajouter Votre cursus</h5>
+    </div>
+</div>
+<div class="main-content">
+
+    {{ form_start(cursusForm) }}
+    <h3><i class="fa fa-university" aria-hidden="true"></i>
+ Baccalauréat ou diplôme équivalent</h3>
+        {{ form_row(cursusForm.bacdate) }}
+        {{ form_row(cursusForm.bacmention) }}
+        {{ form_row(cursusForm.bacsection) }}
+        {{ form_row(cursusForm.bacsession) }}
+        {{ form_row(cursusForm.bacmoyenne) }}
+    <h3> <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+Les annees universitaire</h3>
+
+
+        {{ form_row(cursusForm.diplome) }}
+
+        {{ form_row(cursusForm.etablissement) }}
+
+        {{ form_row(cursusForm.anneeunivesitaire) }}
+
+        {{ form_row(cursusForm.domaine) }}
+        {{ form_row(cursusForm.specialite) }}
+
+        {{ form_row(cursusForm.redoublement) }}
+        <div class="container">
+  <div class="row">
+    <div class="col-md-3 col-sm-3">Année Universitaire</div>
+    <div class="col-md-3 col-sm-3">Moyen</div>
+    <div class="col-md-3 col-sm-3">Mention</div>
+    <div class="col-md-3 col-sm-3">Ratrappage</div>
+  </div>
+   <div class="row">
+    <div class="col-md-3 col-sm-3">{{ form_row(cursusForm.anneeun) }}</div>
+    <div class="col-md-3 col-sm-3">{{ form_row(cursusForm.moyenun) }}</div>
+    <div class="col-md-3 col-sm-3">{{ form_row(cursusForm.Mentionun) }}</div>
+   <div class="col-md-3 col-sm-3">{{ form_row(cursusForm.ratrappageun) }}</div>
+  </div>
+   <div class="row">
+    <div class="col-md-3 col-sm-3">{{ form_row(cursusForm.anneedeux) }}</div>
+    <div class="col-md-3 col-sm-3">{{ form_row(cursusForm.moyendeux) }}</div>
+    <div class="col-md-3 col-sm-3">{{ form_row(cursusForm.Mentiondeux) }}</div>
+    <div class="col-md-3 col-sm-3">{{ form_row(cursusForm.ratrappagedeux) }}</div>
+  </div>
+   <div class="row">
+    <div class="col-md-3 col-sm-3">{{ form_row(cursusForm.anneetrois) }}</div>
+    <div class="col-md-3 col-sm-3">{{ form_row(cursusForm.moyentrois) }}</div>
+    <div class="col-md-3 col-sm-3">{{ form_row(cursusForm.mentiontrois) }}</div>
+    <div class="col-md-3 col-sm-3">{{ form_row(cursusForm.ratrappagetrois) }}</div>
+  </div>
+  </div>
+
+        <button type="submit" class="btn btn-lg btn-primary">Enregistre</button>
+    {{ form_end(cursusForm) }}
+  </div>
+{% endblock %}
+

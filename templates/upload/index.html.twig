@@ -1,0 +1,22 @@
+{% extends "user/bars.html.twig" %}
+
+{% block contenpage %}
+ <div class="page-title">
+    <div class="title_left">
+        <h5 style="font-weight: 600;">Télécharger vos documents de google drive</h5>
+    </div>
+</div>
+<div class="main-content">
+ {{ form_start(UploadForm) }}
+ <i class="fab fa-google-drive"></i>
+        {{ form_row(UploadForm.Cin) }}
+        <i class="fab fa-google-drive"></i>
+        {{ form_row(UploadForm.transcriptun) }}
+        {{ form_row(UploadForm.transcriptdeux) }}
+        {{ form_row(UploadForm.transcripttrois) }}
+        {{ form_row(UploadForm.bac) }}
+
+        <button type="submit" class="btn btn-lg btn-primary">Téléchrger</button>
+    {{ form_end(UploadForm) }}
+</div>
+{% endblock %}

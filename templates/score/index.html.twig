@@ -1,0 +1,14 @@
+{% extends "Admin/bars.html.twig" %}
+
+{% block contenpage %}
+    {{ form_start(ScoreForm) }}
+    
+        {{ form_row(ScoreForm.scoreDossier) }}
+        {{ form_row(ScoreForm.formuleEtab) }}
+        {{ form_row(ScoreForm.scoreEtab ) }}
+
+        <div onclick="calcul()">{{ form_row(ScoreForm.total) }} </div>
+        <button type="submit" class="btn btn-lg btn-primary">save</button>
+
+    {{ form_end(ScoreForm) }}
+{% endblock %}

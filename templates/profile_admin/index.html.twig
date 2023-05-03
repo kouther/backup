@@ -1,0 +1,28 @@
+{% extends "Admin/bars.html.twig" %}
+
+{% block contenpage %}
+
+{{ form_start(ProfileForm2) }}
+
+{{ form_start(ProfileForm) }}
+        {{ form_row(ProfileForm2.name) }}
+       {{ form_row(ProfileForm2.lastname) }}
+       {{ form_row(ProfileForm2.email) }}
+              {{ form_row(ProfileForm2.phone) }}
+
+
+
+        {{ form_row(ProfileForm.Grade) }}
+        {{ form_row(ProfileForm.master) }}
+        {{ form_row(ProfileForm.Etablissement ) }}
+                <button type="submit" class="btn btn-lg btn-primary">Enregister</button>
+
+
+
+    {{ form_end(ProfileForm) }}
+
+
+
+{{ form_end(ProfileForm2) }}
+
+{% endblock %}

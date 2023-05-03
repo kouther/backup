@@ -1,0 +1,83 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cursus index{% endblock %}
+
+{% block body %}
+    <h1>Cursus index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Bacdate</th>
+                <th>Bacmention</th>
+                <th>Bacsection</th>
+                <th>Bacsession</th>
+                <th>Diplome</th>
+                <th>Etablissement</th>
+                <th>Anneeunivesitaire</th>
+                <th>Domaine</th>
+                <th>Specialite</th>
+                <th>Redoublement</th>
+                <th>Bacmoyenne</th>
+                <th>Anneeun</th>
+                <th>Mentionun</th>
+                <th>Moyenun</th>
+                <th>Ratrappageun</th>
+                <th>Anneedeux</th>
+                <th>Mentiondeux</th>
+                <th>Moyendeux</th>
+                <th>Ratrappagedeux</th>
+                <th>Anneetrois</th>
+                <th>Mentiontrois</th>
+                <th>Moyentrois</th>
+                <th>Ratrappagetrois</th>
+                <th>ScoreDossier</th>
+                <th>ScoreEtablissement</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for cursu in cursuses %}
+            <tr>
+                <td>{{ cursu.id }}</td>
+                <td>{{ cursu.bacdate }}</td>
+                <td>{{ cursu.bacmention }}</td>
+                <td>{{ cursu.bacsection }}</td>
+                <td>{{ cursu.bacsession }}</td>
+                <td>{{ cursu.diplome }}</td>
+                <td>{{ cursu.etablissement }}</td>
+                <td>{{ cursu.anneeunivesitaire }}</td>
+                <td>{{ cursu.domaine }}</td>
+                <td>{{ cursu.specialite }}</td>
+                <td>{{ cursu.redoublement }}</td>
+                <td>{{ cursu.bacmoyenne }}</td>
+                <td>{{ cursu.anneeun }}</td>
+                <td>{{ cursu.Mentionun }}</td>
+                <td>{{ cursu.moyenun }}</td>
+                <td>{{ cursu.ratrappageun }}</td>
+                <td>{{ cursu.anneedeux }}</td>
+                <td>{{ cursu.Mentiondeux }}</td>
+                <td>{{ cursu.moyendeux }}</td>
+                <td>{{ cursu.ratrappagedeux }}</td>
+                <td>{{ cursu.anneetrois }}</td>
+                <td>{{ cursu.mentiontrois }}</td>
+                <td>{{ cursu.moyentrois }}</td>
+                <td>{{ cursu.ratrappagetrois }}</td>
+                <td>{{ cursu.scoreDossier }}</td>
+                <td>{{ cursu.scoreEtablissement }}</td>
+                <td>
+                    <a href="{{ path('app_cursus_crud_show', {'id': cursu.id}) }}">show</a>
+                    <a href="{{ path('app_cursus_crud_edit', {'id': cursu.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="27">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_cursus_crud_new') }}">Create new</a>
+{% endblock %}

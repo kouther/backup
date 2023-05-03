@@ -1,0 +1,122 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cursus{% endblock %}
+
+{% block body %}
+    <h1>Cursus</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ cursu.id }}</td>
+            </tr>
+            <tr>
+                <th>Bacdate</th>
+                <td>{{ cursu.bacdate }}</td>
+            </tr>
+            <tr>
+                <th>Bacmention</th>
+                <td>{{ cursu.bacmention }}</td>
+            </tr>
+            <tr>
+                <th>Bacsection</th>
+                <td>{{ cursu.bacsection }}</td>
+            </tr>
+            <tr>
+                <th>Bacsession</th>
+                <td>{{ cursu.bacsession }}</td>
+            </tr>
+            <tr>
+                <th>Diplome</th>
+                <td>{{ cursu.diplome }}</td>
+            </tr>
+            <tr>
+                <th>Etablissement</th>
+                <td>{{ cursu.etablissement }}</td>
+            </tr>
+            <tr>
+                <th>Anneeunivesitaire</th>
+                <td>{{ cursu.anneeunivesitaire }}</td>
+            </tr>
+            <tr>
+                <th>Domaine</th>
+                <td>{{ cursu.domaine }}</td>
+            </tr>
+            <tr>
+                <th>Specialite</th>
+                <td>{{ cursu.specialite }}</td>
+            </tr>
+            <tr>
+                <th>Redoublement</th>
+                <td>{{ cursu.redoublement }}</td>
+            </tr>
+            <tr>
+                <th>Bacmoyenne</th>
+                <td>{{ cursu.bacmoyenne }}</td>
+            </tr>
+            <tr>
+                <th>Anneeun</th>
+                <td>{{ cursu.anneeun }}</td>
+            </tr>
+            <tr>
+                <th>Mentionun</th>
+                <td>{{ cursu.Mentionun }}</td>
+            </tr>
+            <tr>
+                <th>Moyenun</th>
+                <td>{{ cursu.moyenun }}</td>
+            </tr>
+            <tr>
+                <th>Ratrappageun</th>
+                <td>{{ cursu.ratrappageun }}</td>
+            </tr>
+            <tr>
+                <th>Anneedeux</th>
+                <td>{{ cursu.anneedeux }}</td>
+            </tr>
+            <tr>
+                <th>Mentiondeux</th>
+                <td>{{ cursu.Mentiondeux }}</td>
+            </tr>
+            <tr>
+                <th>Moyendeux</th>
+                <td>{{ cursu.moyendeux }}</td>
+            </tr>
+            <tr>
+                <th>Ratrappagedeux</th>
+                <td>{{ cursu.ratrappagedeux }}</td>
+            </tr>
+            <tr>
+                <th>Anneetrois</th>
+                <td>{{ cursu.anneetrois }}</td>
+            </tr>
+            <tr>
+                <th>Mentiontrois</th>
+                <td>{{ cursu.mentiontrois }}</td>
+            </tr>
+            <tr>
+                <th>Moyentrois</th>
+                <td>{{ cursu.moyentrois }}</td>
+            </tr>
+            <tr>
+                <th>Ratrappagetrois</th>
+                <td>{{ cursu.ratrappagetrois }}</td>
+            </tr>
+            <tr>
+                <th>ScoreDossier</th>
+                <td>{{ cursu.scoreDossier }}</td>
+            </tr>
+            <tr>
+                <th>ScoreEtablissement</th>
+                <td>{{ cursu.scoreEtablissement }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_cursus_crud_index') }}">back to list</a>
+
+    <a href="{{ path('app_cursus_crud_edit', {'id': cursu.id}) }}">edit</a>
+
+    {{ include('cursus_crud/_delete_form.html.twig') }}
+{% endblock %}

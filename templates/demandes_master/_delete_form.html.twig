@@ -1,0 +1,8 @@
+<form method="post" action="{{ path('app_demandes_master_delete', {'id': select_master.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ select_master.id) }}">
+    <button class="btn"><i class="fa fa-trash" aria-hidden="true" style="
+    font-size: 24px;
+    color: #e10e17;
+"></i>
+</button>
+</form>

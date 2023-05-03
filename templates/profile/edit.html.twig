@@ -1,0 +1,46 @@
+{% extends "user/bars.html.twig" %}
+
+{% block contenpage %}
+    {% for flash_error in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+    {% endfor %}
+ <div class="page-title">
+    <div class="title_left">
+        <h5 style="font-weight: 600;">Modifier votre profile</h5>
+    </div>
+</div>
+<div class="main-content">
+    {{ form_start(profileFrom) }}
+       <div class="row" style="display: block;clear: both;">
+
+<div class="col-md-6 col-sm-6">
+        {{ form_row(profileFrom.name) }}
+        {{ form_row(profileFrom.lastname) }}
+        {{ form_row(profileFrom.email) }}
+        {{ form_row(profileFrom.cin) }}
+        {{ form_row(profileFrom.phone) }}
+                        {{ form_row(profileFrom.gender) }}
+
+             {{ form_row(profileFrom.situation) }}
+                        <button type="submit" class="btn btn-lg btn-primary">Modifier profil</button>
+
+</div>
+<div class="col-md-6 col-sm-6">
+        {{ form_row(profileFrom.date) }}
+        {{ form_row(profileFrom.birth) }}
+        {{ form_row(profileFrom.address) }}
+        {{ form_row(profileFrom.country) }}
+        {{ form_row(profileFrom.city) }}
+        {{ form_row(profileFrom.zipcode) }}
+
+   
+
+
+        </div>
+
+        </div>
+
+    {{ form_end(profileFrom) }}
+</div>
+{% endblock %}
+

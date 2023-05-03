@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+ {% block title %}Inscription- Plateforme de gestion de condidature au master en ligne{% endblock %}   
+
+
+{% block body %}
+    {% for flash_error in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+    {% endfor %}
+<section id="inscription" class="inscription section-bg">
+
+<div class="container aos-init aos-animate" data-aos="fade-up" style="
+    background: #fff;
+    padding: 3%;
+">
+<div class="row">
+    <div class="col-md-4 col-sm-4"></div>
+    <div class="col-md-4 col-sm-4"> 
+<img  src="assets/img/logo-ucar.png" alt="université de carthage" style="
+    padding: 30px;
+">
+    </div>
+    <div class="col-md-4 col-sm-4"></div>
+
+
+    </div>
+
+        <div class="section-title">
+          <h2>Créez votre compte</h2>
+          <p>Université de carthage a mise en place d'un plateforme de gestion de préinscription en ligne en mastère. Créez un compte, soumettez différentes candidatures à plusieurs mastères et suivez l'état de vos différentes demandes.
+
+</p>
+        </div>
+
+        <div class="row">
+            {{ form_start(registrationForm) }}
+        {{ form_row(registrationForm.name) }}
+        {{ form_row(registrationForm.lastname) }}
+        {{ form_row(registrationForm.email) }}
+        {{ form_row(registrationForm.plainPassword, {
+            label: 'Mot de passe'
+        }) }}
+        {{ form_row(registrationForm.agreeTerms) }}
+
+        <button type="submit" class="btn btn-lg btn-primary" style="background: #47b2e4;">Inscription</button>
+    {{ form_end(registrationForm) }}
+</div>
+</div>
+</section>
+
+    <footer id="footer">
+
+    
+
+   
+
+    <div class="container footer-bottom clearfix">
+      <div class="copyright">
+        © Copyright <strong><span>Arsha</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/ -->
+        Developped by <a href="https://www.linkedin.com/in/kawther-jlassi-43236682/">Kawther jlassi</a>
+
+      </div>
+    </div>
+  </footer>
+{% endblock %}

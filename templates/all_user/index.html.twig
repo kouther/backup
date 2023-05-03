@@ -1,0 +1,120 @@
+{% extends "Admin/bars.html.twig" %}
+
+
+{% block contenpage %}
+
+	<div class="col-lg-12">
+		<ul class="nav nav-pills mb-3">
+			<li class="nav-item">
+				<a href="#list-view" data-toggle="tab" class="nav-link btn-primary mr-1 show active">
+					<i class="fa fa-bars" aria-hidden="true"></i>
+					List View
+				</a>
+			</li>
+			<li class="nav-item">
+				<a href="#grid-view" data-toggle="tab" class="nav-link btn-primary">
+					<i class="fa fa-th-large" aria-hidden="true"></i>Grid View
+				</a>
+			</li>
+		</ul>
+	</div>
+	<div id="list-view" class="tab-pane fade col-lg-12 active show">
+		<div class="card">
+			<div class="card-header">
+				<h4 class="card-title">All Students List
+				</h4>
+			</div>
+			<div class="card-body">
+				<table id="datatable" class="table table-striped table-bordered dataTable no-footer" style="width: 100%;" role="grid" aria-describedby="datatable_info">
+					<thead>
+						<tr>
+							<th>Cin</th>
+							<th>Nom et prénom</th>
+							<th>Email</th>
+							<th></th>
+							<th></th>
+							<th></th>
+							<th></th>
+							<th>Action</th>
+
+
+						</tr>
+					</thead>
+					<tbody>
+						{% for table in data %}
+
+
+							{% if table.getRoles() == ["ROLE_USER"] %}
+
+
+								{% if table.selectmaster.master == app.user.admin.master %}
+									<tr>
+										<td>{{ table.cin }}</td>
+										<td>{{ table.name }}
+											{{ table.lastName }}</td>
+										<td>{{ table.email }}</td>
+										<td>{{ table.score.scoreDossier}}</td>
+										<td>{{ table.score.scoreEtab}}</td>
+										<td>{{ table.score.total}}</td>
+										<td>{{ table.selectmaster.university}}</td>
+										<td>{{ table.selectmaster.master}}</td>
+										<td>{{ table.date |date("m/d/Y")}}</td>
+										<td>
+											<a href="{{ path('app_all_user_show', {'id': table.id}) }}">
+												<i class="fa fa-eye" aria-hidden="true"></i>
+												Voir plus</a>
+
+											<a href="{{ path('app_score_edit', {'id': table.score.id}) }}">Score</a>
+											</td>
+
+										<td>	<a href="{{ path('app_validate', {'id': table.id}) }}">Valider</a>
+										</td>
+
+									</tr>
+								{%  endif %}
+							{%  endif %}
+
+
+						{% endfor %}
+
+					</tbody>
+				</table>
+
+
+			</tbody>
+		</table>
+	</div>
+</div></div><div id="grid-view" class="tab-pane fade col-lg-12">
+<div class="row tab-content">
+	{% for table in data %}
+		{% if table.getRoles() == ["ROLE_USER"] %}
+			<div class="col-lg-4 col-md-6 col-sm-6 col-12">
+				<div class="card" style="width: 30em;">
+					<div class="card-body">
+						<h5 class="card-title">
+							<img src="assets/img/userAvatar.png" class="card-img-top" alt="{{ table.name }} {{ table.lastName }}" style="width: 25%;">
+						</h5>
+						<p class="card-text"></p>
+					</div>
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item">{{ table.cin }}</li>
+						<li class="list-group-item">{{ table.name }}
+							{{ table.lastName }}</li>
+						<li class="list-group-item">{{ table.email}}</li>
+						<li class="list-group-item">{{ table.gender }}</li>
+						<li class="list-group-item">{{ table.phone}}</li>
+						<li class="list-group-item">{{ table.address }}</li>
+						<li class="list-group-item">
+							{{ table.date |date("m/d/Y")}}</li>
+
+					</ul>
+					<div class="card-body" style="display: flex; align-items: center;justify-content: center;">
+						<a href="{{ path('app_all_user_show', {'id': table.id}) }}" class="card-link">Voir plus</a>
+
+					</div>
+				</div>
+			</div>
+		{% endif %}
+	{% endfor %}
+	<div></div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}SelectMaster{% endblock %}
+
+{% block body %}
+    <h1>SelectMaster</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ select_master.id }}</td>
+            </tr>
+            <tr>
+                <th>University</th>
+                <td>{{ select_master.university }}</td>
+            </tr>
+            <tr>
+                <th>Master</th>
+                <td>{{ select_master.master }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_demandes_master_index') }}">back to list</a>
+
+    <a href="{{ path('app_demandes_master_edit', {'id': select_master.id}) }}">edit</a>
+
+    {{ include('demandes_master/_delete_form.html.twig') }}
+{% endblock %}

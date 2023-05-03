@@ -1,0 +1,46 @@
+{% extends "user/bars.html.twig" %}
+
+
+    
+{% block contenpage %}
+
+<div class="page-title">
+    <div class="title_left">
+        <h5 style="font-weight: 600;">Liste des Masters choisis</h5>
+    </div>
+</div>
+<div class="main-content">
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Ordre</th>
+                <th>Etablissement</th>
+                <th>Master</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for select_master in select_masters %}
+            <tr>
+                <td><i class="fa fa-align-justify" aria-hidden="true"></i>
+</td>
+                <td>{{ select_master.university }}</td>
+                <td>{{ select_master.university }}</td>
+                <td>{{ select_master.master }}</td>
+                <td>
+    {{ include('demandes_master/_delete_form.html.twig') }}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_select_master') }}">Déposer dans un autre master</a>
+    </div>
+{% endblock %}

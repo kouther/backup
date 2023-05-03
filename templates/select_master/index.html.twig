@@ -1,0 +1,29 @@
+{% extends "user/bars.html.twig" %}
+
+
+{% block contenpage %}
+	<div class="page-title">
+		<div class="title_left">
+			<h5 style="font-weight: 600;">Déposer votre condidature</h5>
+		</div>
+	</div>
+	<div class="main-content">
+		{{ form_start(form) }}
+		{% if form.vars.errors is not empty %}
+			<div class="mb-3 text-center">
+				{{ form_errors(form) }}
+			</div>
+		{% endif %}
+		<h5>Etablissement</h5>
+		<hr>
+
+		{{ form_row(form.university) }}
+		<h5>Mastère</h5>
+		<hr>
+		{{ form_row(form.master) }}
+
+
+		<button type="submit" class="btn btn-lg btn-primary" formnovalidate>Choisir</button>
+		{{ form_end(form) }}
+	</div>
+{% endblock %}

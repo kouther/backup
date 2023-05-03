@@ -1,0 +1,379 @@
+{% extends "user/bars.html.twig" %}
+  
+
+{% block contenpage %}
+
+
+    <div class="row">
+    <div class="col-md-4 col-sm-4 ">
+                                <div class="card overflow-hidden">
+                                    <div class="bg-primary bg-soft">
+                                        <div class="row">
+                                            <div class="col-7">
+                                                <div class="text-primary p-3">
+                                                    <h5 class="text-primary" style="
+    font-weight: 600;
+">Bienvenue à nouveau !</h5>
+                                                    <p>{{ app.user.name }} {{ app.user.lastname }}</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-5 align-self-end">
+                                                <img src="assets/img/profile-img.png" alt="" class="img-fluid">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body pt-0">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="avatar-md profile-user-wid mb-4">
+                                                    <img src="assets/img/userAvatar.png" alt="" class="img-thumbnail rounded-circle">
+                                                </div>
+                                                <h5 class="font-size-15 text-truncate" style="
+    color: #4b5259;
+">{{ app.user.name }} {{ app.user.lastname }}</h5>
+                                                <p class="text-muted mb-0 text-truncate">{{ app.user.email }}</p>
+                                            </div>
+
+                                            <div class="col-sm-6">
+                                                <div class="pt-4">
+
+                                                    <div class="row">
+                                                        <div class="col-6">
+                                                            <h5 class="font-size-15"></h5>
+                                                            
+                                                            <p class="text-muted mb-0"></p>
+                                                        </div>
+                                                        <div class="col-6">
+                                                                <a href="{{ path('profile') }}" class="btn btn-primary waves-effect waves-light btn-sm">Voir Profil <i class="mdi mdi-arrow-right ms-1"></i></a>
+
+                                                            <h5 class="font-size-15"></h5>
+                                                            <p class="text-muted mb-0"></p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mt-4">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title mb-4">Votre profil</h4>
+                                         <div class="row">
+                                            <div class="col-sm-6">
+                                                <p class="text-muted">Téléphone</p>
+                                                <h3 class="profile-variable">{{ app.user.phone }}</h3>
+                                                <p class="text-muted"><span class="text-success me-2">   </p>
+                                            </div>
+                                         
+                                      
+                                            <div class="col-sm-6">
+                                                <p class="text-muted">CIN</p>
+                                                <h3 class="profile-variable">{{ app.user.cin }}</h3>
+                                                <p class="text-muted"><span class="text-success me-2">   </p>
+                                            </div>
+                                         </div>
+                                            <div class="row">
+                                            <div class="col-sm-6">
+                                                <p class="text-muted">Lieu de naissance</p>
+                                                <h3 class="profile-variable">{{ app.user.birth }}</h3>
+                                                <p class="text-muted"><span class="text-success me-2">   </p>
+                                            </div>
+                                         
+                                      
+                                            <div class="col-sm-6">
+                                                <p class="text-muted">Date de naissance</p>
+                                                <h3 class="profile-variable">{{ app.user.date|date("m/d/Y")}}</h3>
+                                                <p class="text-muted"><span class="text-success me-2">   </p>
+                                            </div>
+                                         </div>
+                                         
+                                        
+                                    </div>
+                                
+                                    <div class="card-body">
+                                        <h4 class="card-title mb-4">Addresse</h4>
+                                         <div class="row">
+                                            <div class="col-sm-6">
+                                                <p class="text-muted">Addresse</p>
+                                                <h3 class="profile-variable">{{ app.user.address }}</h3>
+                                                <p class="text-muted"><span class="text-success me-2">   </p>
+                                            </div>
+                                         
+                                      
+                                            <div class="col-sm-6">
+                                                <p class="text-muted">Pays</p>
+                                                <h3 class="profile-variable">{{ app.user.country }}</h3>
+                                                <p class="text-muted"><span class="text-success me-2">   </p>
+                                            </div>
+                                         </div>
+                                            <div class="row">
+                                            <div class="col-sm-6">
+                                                <p class="text-muted">Ville</p>
+                                                <h3 class="profile-variable">{{ app.user.city }}</h3>
+                                                <p class="text-muted"><span class="text-success me-2">   </p>
+                                            </div>
+                                         
+                                      
+                                            <div class="col-sm-6">
+                                                <p class="text-muted">Code postale</p>
+                                                <h3 class="profile-variable">{{ app.user.zipcode}}</h3>
+                                                <p class="text-muted"><span class="text-success me-2">   </p>
+                                            </div>
+                                         </div>
+                                         
+                                        </div>
+                                </div>
+                            
+    </div>
+    <div class="col-md-8 col-sm-8 ">
+    <div class="row">
+                               
+                                    <div class="col-md-6">
+                                        <div class="card mini-stats-wid">
+                                            <div class="card-body">
+                                                <div class="d-flex">
+                                                    <div class="flex-grow-1">
+                                                        <p class="text-muted fw-medium">Master professionel</p>
+                                                        <h4 class="mb-0">88</h4>
+                                                    </div>
+
+                                                    <div class="flex-shrink-0 align-self-center ">
+                                                        <div class="avatar-sm rounded-circle bg-primary mini-stat-icon">
+                                                            <span class="avatar-title rounded-circle bg-primary">
+<i class="fa fa-graduation-cap" aria-hidden="true" style="
+    font-size: 20px;
+"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="card mini-stats-wid">
+                                            <div class="card-body">
+                                                <div class="d-flex">
+                                                    <div class="flex-grow-1">
+                                                        <p class="text-muted fw-medium">Master de recherche</p>
+                                                        <h4 class="mb-0">74</h4>
+                                                    </div>
+
+                                                    <div class="flex-shrink-0 align-self-center">
+                                                        <div class="avatar-sm rounded-circle bg-primary mini-stat-icon">
+                                                            <span class="avatar-title rounded-circle bg-primary">
+<i class="fa fa-search-plus" aria-hidden="true" style="
+    font-size: 20px;
+"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+    <div class="x_panel">
+<div class="x_title">
+<h2>Liste de mastéres
+ <small></small></h2>
+<ul class="nav navbar-right panel_toolbox">
+<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+</li>
+
+</ul>
+<div class="clearfix"></div>
+</div>
+<div class="x_content">
+<div class="col-md-12 col-sm-12 ">
+ <table class="table">
+        <thead>
+            <tr>
+                <th>Formation</th>
+                <th>Etablissement</th>
+                <th>Abréviation</th>
+                <th>Diplome</th>
+                <th>Parcours</th>
+                <th>Date d'ouverture</th>
+                <th>Date d'expiration</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for master in masters %}
+            <tr>
+                <td>{{ master.formation }}</td>
+                <td>{{ master.etablissement }}</td>
+                <td>{{ master.abreviation }}</td>
+                <td>{{ master.diplome }}</td>
+                <td>{{ master.parcours }}</td>
+                <td>{{ master.opendate |date("m/d/Y")}}</td>
+                <td>{{ master.EndDate |date("m/d/Y") }}</td>
+
+
+                <td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <div class="row">
+    <div class="col-md-4 col-sm-4"></div>
+    <div class="col-md-4 col-sm-4"> 
+       {{ knp_pagination_render(masters) }}
+    </div>
+    <div class="col-md-4 col-sm-4"></div>
+
+
+    </div>
+
+</div>
+
+</div>
+</div>
+
+    
+    </div>
+    </div>
+
+
+
+
+
+    <div class="row">
+    <div class="col-md-4 col-sm-4 ">
+<div class="x_panel">
+<div class="x_title">
+<h2>Déposer une demande de préinscription
+ <small></small></h2>
+<ul class="nav navbar-right panel_toolbox">
+<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+</li>
+
+</ul>
+<div class="clearfix"></div>
+</div>
+<div class="x_content">
+<div class="dashboard-widget-content">
+<ul class="list-unstyled timeline widget">
+<li>
+<div class="block">
+<div class="block_content">
+<h2 class="title">
+<a><i class="icon-flow fa fa-user" aria-hidden="true"></i> Créez un profil</a>
+</h2>
+<div class="byline">
+</div>
+<p class="excerpt"> Aprés la confirmation de votre inscription à la plateforme Remplissez votre profil avant de soumettre votre candidature 
+</p>
+</div>
+</div>
+</li>
+<li>
+<div class="block">
+<div class="block_content">
+<h2 class="title">
+<a><i class="icon-flow fa fa-graduation-cap" aria-hidden="true"></i>
+Créez votre cursus</a>
+</h2>
+<div class="byline">
+</div>
+<p class="excerpt">Suivez les étapes pour créer votre cursus.
+</p>
+</div>
+</div>
+</li>
+<li>
+<div class="block">
+<div class="block_content">
+<h2 class="title">
+<a><i class="icon-flow fa fa-upload" aria-hidden="true"></i>
+Importer vos documents demandés</a>
+</h2>
+<div class="byline">
+</div>
+<p class="excerpt">Importer vots fichier sur google drive et créer un lien  pour partager ou synchroniser vos fichiers Google Drive
+</p>
+</div>
+</div>
+</li>
+<li>
+<div class="block">
+<div class="block_content">
+<h2 class="title">
+<a><i class="icon-flow fa fa-pencil-square-o" aria-hidden="true"></i>
+Déposez vos candidatures</a>
+</h2>
+<div class="byline">
+</div>
+<p class="excerpt">Sélectionnez le parcours souhaité, remplissez les informations demandées et déposez votre candidature
+</p>
+</div>
+</div>
+</li>
+<li>
+<div class="block">
+<div class="block_content">
+<h2 class="title">
+<a><i class="icon-flow fa fa-folder-open" aria-hidden="true"></i>
+
+Consultez vos dossiers
+</a>
+</h2>
+<div class="byline">
+</div>
+<p class="excerpt">Vous aurez toutes les informations nécessaires concernant vos dossiers à travers votre compte ou votre mail.
+
+</p>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+   <div class="col-md-8 col-sm-8 ">
+<div class="row">
+<div class="col-md-12 col-sm-12 ">
+<div class="x_panel">
+<div class="x_title">
+<h2>Date de préinscription  <small>calendrier</small></h2>
+<ul class="nav navbar-right panel_toolbox">
+<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+<a class="dropdown-item" href="#">Settings 1</a>
+<a class="dropdown-item" href="#">Settings 2</a>
+</div>
+</li>
+<li><a class="close-link"><i class="fa fa-close"></i></a>
+</li>
+</ul>
+<div class="clearfix"></div>
+</div>
+<div class="x_content">
+<div id="calendar">
+
+
+</div>
+
+</div>
+</div>
+</div>
+
+</div>
+</div>
+    </div>
+ 
+
+       
+
+{% endblock %}
+
